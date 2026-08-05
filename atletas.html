@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atletas | APEX Performance</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Oswald:wght@700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/motion.css">
+</head>
+<body>
+  
+  <div class="page-transition">
+    <div class="loader-text">ROSTER</div>
+  </div>
+
+  <div class="custom-cursor"></div>
+
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-brand" style="display: flex; align-items: center; gap: 0.5rem;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--color-accent)"><path d="M12 2L2 22h20L12 2zm0 4.5l6.5 13h-13L12 6.5z"/></svg>
+        <h4 style="margin:0; font-size: 1.5rem; color: var(--color-text-primary);">APEX</h4>
+      </a>
+      <ul class="nav-links flex gap-8">
+        <li><a href="catalogo.html" class="nav-link">Gear</a></li>
+        <li><a href="atletas.html" class="nav-link" style="color: var(--color-accent);">Atletas</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main style="padding-top: var(--space-24);">
+    <section class="section">
+      <div class="container grid grid-cols-2 items-center">
+        <div>
+          <h1 class="reveal-text"><span>NUESTRO</span></h1>
+          <h1 class="reveal-text delay-1" style="color: var(--color-accent);"><span>ROSTER</span></h1>
+          <p class="fade-up delay-2" style="font-size: var(--text-lg); font-weight: 700; max-width: 500px;">Buscamos a los que rompen marcas. A los que sudan más que los demás. Conoce a la élite que confía en APEX para llegar más lejos.</p>
+        </div>
+        <div class="fade-up delay-1">
+          <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=2070&auto=format&fit=crop" alt="Athlete" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; filter: contrast(1.2) grayscale(50%);">
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee">
+      <div class="marquee-content" style="color: var(--color-bg);">
+        CROSSFIT // SPRINTERS // POWERLIFTERS // CROSSFIT // SPRINTERS // POWERLIFTERS // CROSSFIT // SPRINTERS // POWERLIFTERS // 
+      </div>
+    </div>
+  </main>
+
+  <footer class="section" style="padding-bottom: var(--space-8); border-top: 1px solid var(--color-border); margin-top: var(--space-16);">
+    <div class="container flex justify-between flex-col gap-8" style="flex-direction: column;">
+      <h1 class="reveal-text" style="font-size: clamp(3rem, 15vw, 12rem); text-align: center; color: var(--color-surface);">APEX</h1>
+      <div class="flex justify-between items-center" style="border-top: 1px solid var(--color-border); padding-top: var(--space-4); margin-top: var(--space-8);">
+        <p class="fade-up" style="margin: 0; font-weight: 700;">&copy; 2026 APEX PERFORMANCE.</p>
+        <div class="flex gap-4 fade-up">
+          <a href="#" class="nav-link">Instagram</a>
+          <a href="#" class="nav-link">Twitter</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+/* UI Components */
+
+/* Custom Cursor (Crosshair / Sniper feel) */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--color-accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: var(--z-cursor);
+  transform: translate(-50%, -50%);
+  transition: width 0.2s var(--ease-snappy), height 0.2s var(--ease-snappy), background-color 0.2s ease, border-radius 0.2s ease;
+  mix-blend-mode: difference;
+}
+
+.custom-cursor::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  background-color: var(--color-accent);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.custom-cursor.is-hovering {
+  width: 60px;
+  height: 60px;
+  border-radius: 0; /* Square on hover for tech feel */
+  background-color: rgba(223, 255, 0, 0.1);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.2rem 3rem;
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-bg);
+  background-color: var(--color-accent);
+  border: none;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s var(--ease-snappy);
+  clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%); /* Slanted edge */
+}
+
+.btn:hover {
+  transform: scale(1.05) skewX(-5deg);
+}
+
+.btn--outline {
+  background-color: transparent;
+  color: var(--color-text-primary);
+  border: 2px solid var(--color-text-primary);
+  clip-path: none;
+}
+
+.btn--outline:hover {
+  background-color: var(--color-text-primary);
+  color: var(--color-bg);
+  transform: scale(1.05);
+}
+
+/* Navigation Links */
+.nav-link {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-primary);
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--color-accent);
+  font-style: italic;
+}
+
+/* Product Cards */
+.product-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  transition: border-color 0.3s ease;
+}
+
+.product-card:hover {
+  border-color: var(--color-accent);
+}
+
+.product-card__image-wrapper {
+  position: relative;
+  aspect-ratio: 1/1;
+  padding: var(--space-8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #111;
+  overflow: hidden;
+}
+
+.product-card__image {
+  width: 80%;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.5s var(--ease-snappy);
+  filter: drop-shadow(0 20px 30px rgba(0,0,0,0.5));
+}
+
+.product-card:hover .product-card__image {
+  transform: scale(1.1) translateY(-10px);
+}
+
+.product-card__info {
+  padding: var(--space-4);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.product-card__title {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.product-card__price {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+/* Marquee / Ticker */
+.marquee {
+  width: 100vw;
+  overflow: hidden;
+  white-space: nowrap;
+  background-color: var(--color-accent);
+  color: var(--color-bg);
+  padding: var(--space-2) 0;
+  display: flex;
+}
+
+.marquee-content {
+  display: inline-block;
+  animation: marquee-scroll 20s linear infinite;
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  text-transform: uppercase;
+  padding-right: 2rem;
+}
+
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
